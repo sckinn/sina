@@ -9,9 +9,6 @@ class SinaSpider(scrapy.Spider):
         'http://hq.sinajs.cn/list=hk00001',
     ]
 
-    def start_requests(self):
+    def parse(self, response):
         for u in self.start_urls:
             yield scrapy.Request(u)
-            
-    def parse(self, response):
-        raise NotImplementedError('{}.parse callback is not defined'.format(self.__class__.__name__))
