@@ -12,3 +12,6 @@ class SinaSpider(scrapy.Spider):
     def start_requests(self):
         for u in self.start_urls:
             yield scrapy.Request(u)
+            
+    def parse(self, response):
+        raise NotImplementedError('{}.parse callback is not defined'.format(self.__class__.__name__))
