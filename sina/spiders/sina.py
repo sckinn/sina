@@ -7,6 +7,7 @@ class SinaSpider(scrapy.Spider):
     allowed_domains = ["hq.sinajs.cn"]
     start_urls = [
         'http://hq.sinajs.cn/list=hk00001',
+        'http://hq.sinajs.cn/list=hk00002',
     ]
 
     def parse(self, response):
