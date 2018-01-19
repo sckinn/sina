@@ -5,7 +5,7 @@ import json
 
 class SinaSpider(scrapy.Spider):
     name = "sina"
-#   allowed_domains = ["dapp-beta2.degico.co","hq.sinajs.cn"]
+    allowed_domains = ["dapp-beta2.degico.co","hq.sinajs.cn"]
     start_urls = [
         'https://dapp-beta2.degico.co/hkgdstock/getsrcurls',
     ]
