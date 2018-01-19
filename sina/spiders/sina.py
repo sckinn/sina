@@ -10,10 +10,6 @@ class SinaSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for u in self.start_urls:
-            yield scrapy.Request(u, callback=self.parse_sina)
-
-    def parse_sina(self, response):
         item = {}
         item['info'] = response.text
         yield item
