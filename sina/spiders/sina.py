@@ -11,7 +11,7 @@ class SinaSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        jsonresponse = json.loads(response)
+        jsonresponse = json.loads(response.text)
         for u in jsonresponse:
             yield scrapy.Request(u, callback=self.parse_sina)
 
