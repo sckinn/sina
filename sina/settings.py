@@ -11,5 +11,5 @@ ROBOTSTXT_OBEY = False
 
 DOWNLOADER_MIDDLEWARES = {
       'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware' : None,
-      'sinabot.comm.rotate_useragent.RotateUserAgentMiddleware' :400
+      'sina.comm.rotate_useragent.RotateUserAgentMiddleware' :400
 }
