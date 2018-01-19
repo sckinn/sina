@@ -15,5 +15,5 @@ class SinaSpider(scrapy.Spider):
 
     def parse_sina(self, response):
         item = {}
-        item['info'] = response
+        item['info'] = response.text
         yield item
