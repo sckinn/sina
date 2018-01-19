@@ -4,13 +4,17 @@ import scrapy
 
 class SinaSpider(scrapy.Spider):
     name = "sina"
-    allowed_domains = ["hq.sinajs.cn"]
+    allowed_domains = ["dapp-beta2.degico.co"]
     start_urls = [
-        'http://hq.sinajs.cn/list=hk00001',
-        'http://hq.sinajs.cn/list=hk00002',
+        'https://dapp-beta2.degico.co/hkgdstock/getsrcurls',
     ]
 
     def parse(self, response):
+        jsonresponse = json.loads(response)
+        for u in jsonresponse:
+            yield scrapy.Request(u, callback=self.parse_sina)
+
+    def parse_sina(self, response):
         item = {}
         item['info'] = response.text
         yield item
